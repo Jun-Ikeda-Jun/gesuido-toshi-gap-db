@@ -1,0 +1,141 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>下水道 投資予定ギャップDB｜下水道の年度別 投資予定を団体横断で一覧</title>
+<meta name="description" content="自治体が自分で公表した「下水道の年度別 投資予定」を、団体・年度・施設種別で横断一覧。契約実績ページへのリンクを併記し、計画と発注の突合を1画面で。 5団体・22件の投資予定を掲載。出典は各団体が公表した経営戦略・ストックマネジメント計画。">
+<style>
+:root{--bg:#f2f6f9;--panel:#fff;--ink:#12262f;--sub:#5c7784;--ac:#0d6e8c;--big:#b4530a;--now:#0a7d4f;--line:#dbe6ec}
+@media(prefers-color-scheme:dark){:root{--bg:#0a1419;--panel:#101f27;--ink:#dbe9f0;--sub:#8ba6b3;--ac:#4cb6d6;--big:#e0913f;--now:#3dc78a;--line:#1c313c}}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(135deg,var(--ac),#063a4e);color:#fff;padding:30px 0 26px}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px}
+h1{margin:0;font-size:22px}.tag{opacity:.93;margin-top:7px;font-size:13.5px}
+.count{margin-top:12px;font-size:12.5px;background:rgba(255,255,255,.16);display:inline-block;padding:4px 12px;border-radius:20px}
+.how{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin:16px 0;font-size:13px;color:var(--sub)}
+.how b{color:var(--ink)}.how ol{margin:8px 0 0;padding-left:20px}
+.filters{position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:5;border-bottom:1px solid var(--line)}
+.filters input,.filters select{font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+.filters input{width:100%;margin-bottom:8px}.filters select{margin-right:8px}
+main{padding:4px 0 50px}
+.gov{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0}
+.gh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.pref{font-size:11.5px;color:var(--sub);display:block}
+.gh h2{margin:1px 0 0;font-size:18px}
+.peak{font-size:12.5px;color:var(--sub);text-align:right}.peak b{color:var(--ink);font-size:15px}
+.big{display:inline-block;background:var(--big);color:#fff;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:700;margin-left:6px}
+.sum{margin:9px 0 4px;display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:11.5px;border:1px solid var(--line);border-radius:20px;padding:2px 9px;color:var(--sub)}
+.chip b{color:var(--ink)}.chip.now{border-color:var(--now);color:var(--now)}.chip.now b{color:var(--now)}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px}
+th{text-align:left;color:var(--sub);font-weight:600;font-size:11.5px;border-bottom:1px solid var(--line);padding:5px 4px}
+td{padding:6px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+.r{text-align:right;white-space:nowrap}.fy{white-space:nowrap;color:var(--sub)}.q{color:var(--sub);white-space:nowrap}
+.k{display:inline-block;font-size:10.5px;background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:0 5px;margin-right:6px;color:var(--sub)}
+.links{margin-top:10px;display:flex;flex-direction:column;gap:5px;font-size:12.5px}
+.links a{color:var(--ac);text-decoration:none}.links a:hover{text-decoration:underline}
+.links .bid{font-weight:600}.nobid{color:var(--sub);font-size:12px}
+footer{color:var(--sub);font-size:11.5px;padding:22px 0 40px;line-height:1.8}
+.none{padding:30px;text-align:center;color:var(--sub)}
+</style></head><body>
+<header><div class="wrap"><h1>🚧 下水道 投資予定ギャップDB</h1>
+<div class="tag">自治体が自分で公表した「下水道の年度別 投資予定」を、団体・年度・施設種別で横断一覧。契約実績ページへのリンクを併記し、計画と発注の突合を1画面で。</div>
+<div class="count">5団体 / 22件の投資予定を掲載（2026-09-11時点）</div></div></header>
+<div class="wrap">
+<div class="how"><b>使い方</b> — ここに載っているのは、各団体が自分で公表した「これから投じる予定の額」です。発注済みかどうかは書かれていません。
+<ol><li>団体を選び、年度と区分（管渠／処理場設備 など）と計画額を見る</li>
+<li>「出典」で計画の原典PDFを開き、該当ページの表を確認する</li>
+<li>「入札・契約結果を見る」でその団体の契約実績を開き、同じ内容の発注が出ているかを突き合わせる</li></ol></div>
+
+<div class="filters">
+<input id="q" type="search" placeholder="団体名・区分で絞り込み（例: 管渠、白井市）" autocomplete="off">
+<select id="pref"><option value="">都道府県: すべて</option><option>千葉県</option><option>埼玉県</option><option>東京都</option><option>群馬県</option></select>
+<select id="kind"><option value="">区分: すべて</option><option>その他</option><option>処理場・設備</option><option>改築・更新</option><option>新規整備</option><option>管渠</option><option>雨水</option></select>
+<select id="size"><option value="">規模: すべて</option><option value="big">年3億円以上の団体のみ</option></select>
+</div>
+</div>
+<main><div class="wrap" id="list">
+<article class="gov" data-pref="埼玉県" data-kinds="その他 新規整備 管渠 改築・更新" data-q="埼玉県春日部市10年間の総事業費 会之堀川第一幹線整備事業 流域下水道建設負担金 不明水対策 管渠工事 総合地震対策 ストックマネジメント計画 管渠工事 上下水道耐震化計画" data-peak="9.83">
+  <div class="gh">
+    <div><span class="pref">埼玉県</span><h2>春日部市</h2></div>
+    <div class="peak">単年度の計画額 最大 <b>9.8億円</b><span class="big">年3億円以上</span></div>
+  </div>
+  <div class="sum"><span class="chip now">令和8年度 <b>9.8億円</b></span></div>
+  <table><thead><tr><th>年度</th><th>区分（出典の表記）</th><th>数量</th><th class="r">計画額</th></tr></thead><tbody>
+  <tr><td class="fy">令和8年度〜令和17年度</td><td><span class="k k-その他">その他</span>10年間の総事業費</td><td class="q">—</td><td class="r">15,798,940千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-新規整備">新規整備</span>会之堀川第一幹線整備事業</td><td class="q">—</td><td class="r">650,000千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-その他">その他</span>流域下水道建設負担金</td><td class="q">—</td><td class="r">114,057千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-管渠">管渠</span>不明水対策 管渠工事</td><td class="q">—</td><td class="r">74,000千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-改築・更新">改築・更新</span>総合地震対策</td><td class="q">—</td><td class="r">72,678千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-管渠">管渠</span>ストックマネジメント計画 管渠工事</td><td class="q">—</td><td class="r">50,000千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-改築・更新">改築・更新</span>上下水道耐震化計画</td><td class="q">—</td><td class="r">22,000千円</td></tr>
+  </tbody></table>
+  <div class="links">
+    <a href="https://www.city.kasukabe.lg.jp/material/files/group/58/R0702Smaterial01a.pdf" target="_blank" rel="noopener">📄 出典: 春日部市下水道事業経営戦略改定（案） — PDF p.1</a>
+    <a class="bid" href="https://www.city.kasukabe.lg.jp/jigyoshamuke/nyusatsu_keiyaku/nyusatsukekkaichiran/35/index.html" target="_blank" rel="noopener">🔎 春日部市の入札・契約結果を見る（発注済みか確認）</a>
+  </div>
+</article><article class="gov" data-pref="千葉県" data-kinds="雨水 その他 改築・更新 新規整備" data-q="千葉県白井市雨水（新規） 流域下水道建設負担金 汚水（更新） 汚水（機能改良） 汚水（新規） 雨水（新規） 汚水（機能改良） 流域下水道建設負担金 汚水（更新） 汚水（新規）" data-peak="2.09">
+  <div class="gh">
+    <div><span class="pref">千葉県</span><h2>白井市</h2></div>
+    <div class="peak">単年度の計画額 最大 <b>2.1億円</b></div>
+  </div>
+  <div class="sum"><span class="chip now">令和8年度 <b>2.1億円</b></span><span class="chip now">令和9年度 <b>2.1億円</b></span></div>
+  <table><thead><tr><th>年度</th><th>区分（出典の表記）</th><th>数量</th><th class="r">計画額</th></tr></thead><tbody>
+  <tr><td class="fy">令和8年度</td><td><span class="k k-雨水">雨水</span>雨水（新規）</td><td class="q">—</td><td class="r">139,914千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-その他">その他</span>流域下水道建設負担金</td><td class="q">—</td><td class="r">32,000千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-改築・更新">改築・更新</span>汚水（更新）</td><td class="q">—</td><td class="r">22,240千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-改築・更新">改築・更新</span>汚水（機能改良）</td><td class="q">—</td><td class="r">11,317千円</td></tr><tr><td class="fy">令和8年度</td><td><span class="k k-新規整備">新規整備</span>汚水（新規）</td><td class="q">—</td><td class="r">3,824千円</td></tr><tr><td class="fy">令和9年度</td><td><span class="k k-雨水">雨水</span>雨水（新規）</td><td class="q">—</td><td class="r">72,504千円</td></tr><tr><td class="fy">令和9年度</td><td><span class="k k-改築・更新">改築・更新</span>汚水（機能改良）</td><td class="q">—</td><td class="r">68,313千円</td></tr><tr><td class="fy">令和9年度</td><td><span class="k k-その他">その他</span>流域下水道建設負担金</td><td class="q">—</td><td class="r">43,000千円</td></tr><tr><td class="fy">令和9年度</td><td><span class="k k-改築・更新">改築・更新</span>汚水（更新）</td><td class="q">—</td><td class="r">23,384千円</td></tr><tr><td class="fy">令和9年度</td><td><span class="k k-新規整備">新規整備</span>汚水（新規）</td><td class="q">—</td><td class="r">2,272千円</td></tr>
+  </tbody></table>
+  <div class="links">
+    <a href="https://www.city.shiroi.chiba.jp/material/files/group/43/gesuidousenryakur7.pdf" target="_blank" rel="noopener">📄 出典: 白井市下水道事業経営戦略 — PDF p.28</a>
+    <a class="bid" href="https://www.city.shiroi.chiba.jp/sangyo/nyusatsu/n04/index.html" target="_blank" rel="noopener">🔎 白井市の入札・契約結果を見る（発注済みか確認）</a>
+  </div>
+</article><article class="gov" data-pref="東京都" data-kinds="改築・更新 処理場・設備" data-q="東京都府中市老朽化施設の更新 広域的な視点による汚水処理" data-peak="0.00">
+  <div class="gh">
+    <div><span class="pref">東京都</span><h2>府中市</h2></div>
+    <div class="peak">期間まとめの計画額 最大 <b>121.0億円</b></div>
+  </div>
+  
+  <table><thead><tr><th>年度</th><th>区分（出典の表記）</th><th>数量</th><th class="r">計画額</th></tr></thead><tbody>
+  <tr><td class="fy">令和8年度〜令和17年度</td><td><span class="k k-改築・更新">改築・更新</span>老朽化施設の更新</td><td class="q">—</td><td class="r">121億円</td></tr><tr><td class="fy">令和8年度〜令和17年度</td><td><span class="k k-処理場・設備">処理場・設備</span>広域的な視点による汚水処理</td><td class="q">—</td><td class="r">39億円</td></tr>
+  </tbody></table>
+  <div class="links">
+    <a href="https://www.city.fuchu.tokyo.jp/gyosei/kekaku/kyogikai/tosikiban/keieisenryaku/04keieisenryaku.files/4-2_keieisenryaku.pdf" target="_blank" rel="noopener">📄 出典: 経営戦略 — PDF p.34</a>
+    <a class="bid" href="https://www.city.fuchu.tokyo.jp/jigyosha/keyaku/nyusatu/index.html" target="_blank" rel="noopener">🔎 府中市の入札・契約結果を見る（発注済みか確認）</a>
+  </div>
+</article><article class="gov" data-pref="群馬県" data-kinds="管渠" data-q="群馬県安中市管渠更新（新設・改築）" data-peak="0.00">
+  <div class="gh">
+    <div><span class="pref">群馬県</span><h2>安中市</h2></div>
+    <div class="peak">期間まとめの計画額 最大 <b>28.9億円</b></div>
+  </div>
+  
+  <table><thead><tr><th>年度</th><th>区分（出典の表記）</th><th>数量</th><th class="r">計画額</th></tr></thead><tbody>
+  <tr><td class="fy">30年間</td><td><span class="k k-管渠">管渠</span>管渠更新（新設・改築）</td><td class="q">—</td><td class="r">2,891百万円</td></tr>
+  </tbody></table>
+  <div class="links">
+    <a href="https://www.city.annaka.lg.jp/uploaded/attachment/10581.pdf" target="_blank" rel="noopener">📄 出典: 下水道事業経営戦略 — PDF p.23</a>
+    <a class="bid" href="https://www.city.annaka.lg.jp/life/4/26/" target="_blank" rel="noopener">🔎 安中市の入札・契約結果を見る（発注済みか確認）</a>
+  </div>
+</article><article class="gov" data-pref="東京都" data-kinds="その他" data-q="東京都小平市流域下水道費等 流域下水道費等" data-peak="0.00">
+  <div class="gh">
+    <div><span class="pref">東京都</span><h2>小平市</h2></div>
+    <div class="peak">期間まとめの計画額 最大 <b>13.8億円</b></div>
+  </div>
+  
+  <table><thead><tr><th>年度</th><th>区分（出典の表記）</th><th>数量</th><th class="r">計画額</th></tr></thead><tbody>
+  <tr><td class="fy">令和8年度〜令和12年度</td><td><span class="k k-その他">その他</span>流域下水道費等</td><td class="q">—</td><td class="r">1,383百万円</td></tr><tr><td class="fy">令和3年度〜令和7年度</td><td><span class="k k-その他">その他</span>流域下水道費等</td><td class="q">—</td><td class="r">1,154百万円</td></tr>
+  </tbody></table>
+  <div class="links">
+    <a href="https://www.city.kodaira.tokyo.jp/kurashi/files/88466/088466/att_0000014.pdf" target="_blank" rel="noopener">📄 出典: 経営戦略 — PDF p.10</a>
+    <a class="bid" href="https://www.city.kodaira.tokyo.jp/kurashi/index07016002.html" target="_blank" rel="noopener">🔎 小平市の入札・契約結果を見る（発注済みか確認）</a>
+  </div>
+</article>
+<div class="none" id="empty" hidden>条件に合う団体がありません。</div>
+</div></main>
+<div class="wrap"><footer>
+出典はすべて各団体が公表した経営戦略・ストックマネジメント計画等です。金額・年度・区分は原典の表記をそのまま載せています（本文の転載はしていません）。<br>
+このサイトは計画値を並べたものであり、発注の有無・時期・内容を示すものではありません。実際の発注は各団体の入札・契約情報でご確認ください。<br>
+数値の読み取りに誤りを見つけた場合は、原典（出典リンク）の記載が正です。年3億円以上の年度を持つ団体: 1団体。
+</footer></div>
+<script>
+var q=document.getElementById('q'),fp=document.getElementById('pref'),fk=document.getElementById('kind'),fs=document.getElementById('size');
+var cards=[].slice.call(document.querySelectorAll('.gov')),empty=document.getElementById('empty');
+function apply(){var t=(q.value||'').trim(),p=fp.value,k=fk.value,s=fs.value,n=0;
+cards.forEach(function(c){var ok=(!t||c.dataset.q.indexOf(t)>=0)&&(!p||c.dataset.pref===p)&&(!k||c.dataset.kinds.split(' ').indexOf(k)>=0)&&(!s||parseFloat(c.dataset.peak)>=3);
+c.hidden=!ok;if(ok)n++;});empty.hidden=n>0;}
+[q,fp,fk,fs].forEach(function(e){e.addEventListener('input',apply);});
+</script>
+
+<script data-goatcounter="https://junikeda.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+</body></html>
